@@ -1,9 +1,11 @@
+"use client"
+
 import { motion } from "framer-motion"
 import { Container } from "@/components/ui/container"
 import { Card } from "@/components/ui/card"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink, Code } from "lucide-react"
 
 export default function ProjectsPage() {
   const projects = [
@@ -64,9 +66,9 @@ export default function ProjectsPage() {
   ]
 
   return (
-    <main className="min-h-screen pt-32">
+    <main className="min-h-screen">
       {/* Hero Section */}
-      <Section className="py-20 text-center">
+      <Section className="py-24 text-center bg-gradient-to-b from-primary/5 to-background">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +78,7 @@ export default function ProjectsPage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Our Portfolio
             </h1>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-foreground/70 mb-8">
               Proven track record of delivering transformative technology solutions for industry leaders. See what we've built.
             </p>
           </motion.div>
@@ -130,7 +132,7 @@ export default function ProjectsPage() {
                         View Project
                       </Button>
                       <Button variant="ghost" size="sm" className="flex-1">
-                        <Github className="w-4 h-4 mr-2" />
+                        <Code className="w-4 h-4 mr-2" />
                         Code
                       </Button>
                     </div>
@@ -190,8 +192,8 @@ export default function ProjectsPage() {
       <Section>
         <Container>
           <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-12 text-center">
-            <h2 className="text-4xl font-bold mb-4">See Your Project Come to Life</h2>
-            <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">See Your Project Come to Life</h2>
+            <p className="text-base sm:text-lg text-foreground/70 mb-8">
               Ready to join our roster of successful clients? Let's talk about your vision.
             </p>
             <a href="/contact">

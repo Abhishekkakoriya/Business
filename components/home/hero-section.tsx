@@ -14,7 +14,7 @@ const features = [
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pb-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -35,8 +35,8 @@ export function HeroSection() {
         />
       </div>
 
-      <Container className="relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <Container className="relative z-10 py-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-96">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ export function HeroSection() {
             </h1>
 
             <motion.p
-              className="text-xl text-foreground/70 mb-8 max-w-lg"
+              className="text-base sm:text-lg lg:text-xl text-foreground/70 mb-8 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
@@ -124,46 +124,61 @@ export function HeroSection() {
 
           {/* Right Content - Visual */}
           <motion.div
-            className="relative hidden lg:block"
+            className="relative hidden lg:block h-96"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <div className="relative w-full aspect-square">
+            <div className="relative w-full h-full flex items-center justify-center">
               {/* Gradient Box */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl" />
               
               {/* Code/Tech visualization */}
               <motion.div
-                className="absolute inset-4 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl border border-primary/20 backdrop-blur-sm p-6"
+                className="absolute inset-0 bg-card/40 dark:bg-card/20 rounded-xl border border-border/50 backdrop-blur-md p-6 flex flex-col shadow-2xl"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
               >
-                <div className="space-y-4">
-                  <div className="w-32 h-3 bg-primary/30 rounded" />
-                  <div className="w-full h-2 bg-primary/20 rounded" />
-                  <div className="w-48 h-2 bg-accent/20 rounded" />
-                  <div className="w-full h-2 bg-primary/20 rounded mt-8" />
-                  <div className="w-40 h-2 bg-accent/20 rounded" />
-                  <div className="w-full h-2 bg-primary/20 rounded mt-8" />
-                  <div className="w-36 h-2 bg-accent/20 rounded" />
+                {/* Header */}
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-border/40">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                  </div>
+                  <div className="text-xs font-mono text-muted-foreground bg-muted/50 px-2 py-1 rounded">server.ts</div>
+                </div>
+
+                {/* Code Content */}
+                <div className="font-mono text-sm space-y-2 text-foreground/80 flex-1">
+                  <p><span className="text-primary font-medium">import</span> &#123; System &#125; <span className="text-primary font-medium">from</span> <span className="text-accent">'@core/system'</span>;</p>
+                  <p className="mt-4"><span className="text-primary font-medium">const</span> app = <span className="text-primary">new</span> System(&#123;</p>
+                  <p className="pl-4">performance: <span className="text-accent">'ultra'</span>,</p>
+                  <p className="pl-4">security: <span className="text-primary font-medium">true</span>,</p>
+                  <p className="pl-4">scale: <span className="text-accent">'global'</span></p>
+                  <p>&#125;);</p>
+                  <p className="mt-4">app.deploy().then(() =&gt; &#123;</p>
+                  <p className="pl-4">console.log(<span className="text-success">'🚀 Systems online'</span>);</p>
+                  <p>&#125;);</p>
                 </div>
               </motion.div>
 
               {/* Floating Card */}
-              <motion.div
-                className="absolute -right-12 -bottom-12 bg-white dark:bg-slate-900 rounded-xl shadow-2xl p-6 max-w-xs"
-                animate={{ y: [0, 20, 0] }}
-                transition={{ duration: 5, repeat: Infinity }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent" />
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">50+ Projects</p>
-                    <p className="text-xs text-foreground/60">Successfully Delivered</p>
+              <div className="absolute -bottom-8 -right-8 z-20">
+                <motion.div
+                  className="bg-card text-card-foreground rounded-xl shadow-xl p-5 border border-border flex items-center gap-4"
+                  animate={{ y: [0, 20, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg flex-shrink-0">
+                    <Sparkles className="w-6 h-6 text-white" />
                   </div>
-                </div>
-              </motion.div>
+                  <div className="flex flex-col pr-2">
+                    <span className="text-base font-bold whitespace-nowrap">50+ Projects</span>
+                    <span className="text-xs text-muted-foreground whitespace-nowrap">Successfully Delivered</span>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

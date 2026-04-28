@@ -12,7 +12,7 @@ const footerLinks = {
   ],
   work: [
     { label: "Projects", href: "/projects" },
-    { label: "Portfolio", href: "/projects" },
+    { label: "Case Studies", href: "/projects" },
     { label: "Careers", href: "/internships" },
   ],
   resources: [
@@ -72,8 +72,8 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.href}>
+              {footerLinks.company.map((link, index) => (
+                <li key={`company-${link.href}-${index}`}>
                   <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>
@@ -85,8 +85,8 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Our Work</h3>
             <ul className="space-y-2">
-              {footerLinks.work.map((link) => (
-                <li key={link.href}>
+              {footerLinks.work.map((link, index) => (
+                <li key={`${link.href}-${link.label}-${index}`}>
                   <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>
@@ -98,8 +98,8 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              {footerLinks.resources.map((link) => (
-                <li key={link.href}>
+              {footerLinks.resources.map((link, index) => (
+                <li key={`resources-${link.href}-${index}`}>
                   <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>

@@ -8,45 +8,45 @@ import { Section } from "@/components/ui/section"
 
 const services = [
   {
-    icon: Briefcase,
-    title: "Internship Programs",
-    description: "Paid & unpaid internships based on your skill level. Gain real-world experience.",
-    href: "/internships",
+    icon: Code,
+    title: "Custom Development",
+    description: "Bespoke software solutions tailored to your business needs and vision.",
+    href: "/services",
     color: "from-blue-500 to-cyan-500"
   },
   {
-    icon: GraduationCap,
-    title: "Interview Preparation",
-    description: "DSA, system design, HR prep. Crack interviews at top companies.",
-    href: "/interview-prep",
+    icon: Briefcase,
+    title: "Enterprise Architecture",
+    description: "Scalable systems designed for growth and reliability at enterprise scale.",
+    href: "/services",
     color: "from-violet-500 to-purple-500"
   },
   {
-    icon: Code,
-    title: "Project Development",
-    description: "Build full-stack projects for your portfolio and our clients.",
-    href: "/projects",
+    icon: Rocket,
+    title: "Cloud & DevOps",
+    description: "Modern infrastructure and deployment strategies for optimal performance.",
+    href: "/services",
     color: "from-emerald-500 to-green-500"
   },
   {
     icon: FileText,
-    title: "Resume Optimization",
-    description: "ATS-friendly resumes that get you noticed by recruiters.",
-    href: "/contact",
+    title: "Data Solutions",
+    description: "Analytics platforms and data pipelines that drive business intelligence.",
+    href: "/services",
     color: "from-orange-500 to-red-500"
   },
   {
     icon: Users,
-    title: "Career Mentorship",
-    description: "1-on-1 guidance from industry professionals in your field.",
+    title: "Technical Consulting",
+    description: "Expert guidance on technology strategy and digital transformation.",
     href: "/contact",
     color: "from-pink-500 to-rose-500"
   },
   {
     icon: Rocket,
-    title: "Client Projects",
-    description: "Work on real startup MVPs and get paid for your contributions.",
-    href: "/projects",
+    title: "View All Services",
+    description: "Explore our complete range of enterprise software solutions.",
+    href: "/services",
     color: "from-indigo-500 to-blue-500"
   },
 ]
@@ -76,16 +76,16 @@ export function ServicesSection() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
         >
-          What We <span className="gradient-text">Offer</span>
+          Our <span className="gradient-text">Services</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg text-muted-foreground"
+          className="text-base sm:text-lg lg:text-lg text-muted-foreground"
         >
-          Comprehensive programs designed to transform your career trajectory
+          Enterprise-grade solutions for modern businesses
         </motion.p>
       </div>
 

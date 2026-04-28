@@ -7,33 +7,34 @@ import { Section } from "@/components/ui/section"
 const outcomes = [
   {
     icon: Building2,
-    metric: "50+",
-    label: "Companies Hiring",
-    description: "Our students placed at",
+    metric: "100+",
+    label: "Enterprise Clients",
+    description: "Trusted by leading companies",
   },
   {
     icon: Trophy,
-    metric: "95%",
-    label: "Success Rate",
-    description: "Students land jobs within",
+    metric: "99.9%",
+    label: "Uptime SLA",
+    description: "Average system availability",
   },
   {
     icon: TrendingUp,
-    metric: "₹8 LPA",
-    label: "Average Package",
-    description: "Starting salary for graduates",
+    metric: "$100M+",
+    label: "Client Value",
+    description: "Total value created",
   },
   {
     icon: Users,
-    metric: "500+",
-    label: "Active Community",
-    description: "Students & alumni network",
+    metric: "50+",
+    label: "Projects Delivered",
+    description: "Successfully completed",
   },
 ]
 
 export function TrustedOutcomesSection() {
   return (
     <Section className="bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
+      <div className="mx-auto max-w-7xl px-4">
       <div className="text-center mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +42,7 @@ export function TrustedOutcomesSection() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
         >
-          <span className="gradient-text">Proven</span> Track Record
+          Trusted by <span className="gradient-text">Industry Leaders</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +51,7 @@ export function TrustedOutcomesSection() {
           transition={{ delay: 0.1 }}
           className="text-lg text-muted-foreground"
         >
-          Numbers that speak for themselves
+          Proven results across diverse industries and scales
         </motion.p>
       </div>
 
@@ -84,15 +85,16 @@ export function TrustedOutcomesSection() {
         transition={{ delay: 0.4 }}
         className="mt-16 text-center"
       >
-        <p className="text-sm text-muted-foreground mb-6">Students placed at top companies</p>
+        <p className="text-sm text-muted-foreground mb-6">Trusted by innovative companies worldwide</p>
         <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-          {["Google", "Amazon", "Microsoft", "Flipkart", "Zomato", "Paytm"].map((company) => (
+          {["Google", "Amazon", "Microsoft", "Meta", "Apple", "Netflix"].map((company) => (
             <div key={company} className="text-2xl font-bold text-muted-foreground">
               {company}
             </div>
           ))}
         </div>
       </motion.div>
+      </div>
     </Section>
   )
 }
