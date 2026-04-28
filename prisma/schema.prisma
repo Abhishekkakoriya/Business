@@ -1,0 +1,140 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// User Model - For general users/students
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String
+  phone         String?
+  college       String?
+  graduationYear Int?
+  skills        String?  // JSON string of skills array
+  resumeUrl     String?
+  linkedinUrl   String?
+  githubUrl     String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  applications  Application[]
+  testimonials  Testimonial[]
+}
+
+// Admin User Model - For platform administrators
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("admin") // admin, super_admin
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// Application Model - For internship/program applications
+model Application {
+  id               String   @id @default(cuid())
+  userId           String?
+  user             User?    @relation(fields: [userId], references: [id])
+
+  // Application Details
+  applicantName    String
+  applicantEmail   String
+  applicantPhone   String
+  college          String?
+  graduationYear   Int?
+  programType      String   // "paid_internship", "unpaid_internship", "project_training"
+  skills           String?  // JSON string
+  resumeUrl        String?
+  coverLetter      String?
+
+  // Status
+  status           String   @default("pending") // pending, reviewing, accepted, rejected
+  reviewNotes      String?
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+// Contact Model - For general inquiries
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  type      String   @default("general") // general, client_inquiry, support
+  status    String   @default("new") // new, read, responded, closed
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Testimonial Model - Success stories
+model Testimonial {
+  id          String   @id @default(cuid())
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id])
+
+  name        String
+  role        String?  // "Student", "Graduate", "Working Professional"
+  company     String?
+  image       String?
+  rating      Int      @default(5)
+  content     String
+  isApproved  Boolean  @default(false)
+  isFeatured  Boolean  @default(false)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Project Model - Portfolio projects
+model Project {
+  id           String   @id @default(cuid())
+  title        String
+  description  String
+  category     String   // "web", "mobile", "ai_ml", "fullstack", "academic"
+  technologies String   // JSON string of tech stack
+  imageUrl     String?
+  liveUrl      String?
+  githubUrl    String?
+  clientName   String?
+  studentNames String?  // JSON string of student names
+  isFeatured   Boolean  @default(false)
+  isPublished  Boolean  @default(true)
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// Newsletter Subscription Model
+model Newsletter {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Lead Model - For tracking potential clients and students
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  source    String?  // "website", "referral", "social_media"
+  type      String   // "student", "client", "partner"
+  notes     String?
+  status    String   @default("new") // new, contacted, qualified, converted, lost
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

@@ -1,0 +1,30 @@
+# ============================================
+# DOCKER COMPOSE - DEVELOPMENT MODE
+# ============================================
+# Use this for development with hot-reload
+
+version: '3.9'
+
+services:
+  career-accelerator-dev:
+    image: node:20-alpine
+    container_name: career-accelerator-dev
+    working_dir: /app
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+    command: sh -c "npm install && npm run dev"
+    networks:
+      - career-accelerator-network
+    stdin_open: true
+    tty: true
+
+networks:
+  career-accelerator-network:
+    driver: bridge
