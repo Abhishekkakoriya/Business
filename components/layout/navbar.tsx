@@ -43,9 +43,9 @@ function ThemeToggle() {
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
-  { href: "/internships", label: "Internships" },
-  { href: "/interview-prep", label: "Interview Prep" },
   { href: "/contact", label: "Contact" },
 ]
 
@@ -112,9 +112,9 @@ export function Navbar() {
           {/* CTA and Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
             <ThemeToggle />
-            <Link href="/internships">
+            <Link href="/contact">
               <Button variant="gradient" size="sm">
-                Apply Now
+                Get Started
               </Button>
             </Link>
           </div>
@@ -155,9 +155,9 @@ export function Navbar() {
               ))}
               <div className="pt-4 flex items-center gap-4">
                 <ThemeToggle />
-                <Link href="/internships" onClick={() => setIsOpen(false)} className="flex-1">
+                <Link href="/contact" onClick={() => setIsOpen(false)} className="flex-1">
                   <Button variant="gradient" size="md" className="w-full">
-                    Apply Now
+                    Get Started
                   </Button>
                 </Link>
               </div>

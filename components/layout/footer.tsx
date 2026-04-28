@@ -7,13 +7,13 @@ import { Container } from "@/components/ui/container"
 const footerLinks = {
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Team", href: "/about#team" },
+    { label: "Services", href: "/services" },
     { label: "Contact", href: "/contact" },
   ],
-  programs: [
-    { label: "Internships", href: "/internships" },
-    { label: "Interview Prep", href: "/interview-prep" },
+  work: [
     { label: "Projects", href: "/projects" },
+    { label: "Portfolio", href: "/projects" },
+    { label: "Careers", href: "/internships" },
   ],
   resources: [
     { label: "Blog", href: "/blog" },
@@ -50,7 +50,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground mb-6">
-              Accelerating careers through real-world projects, internships, and expert mentorship. Build skills that matter.
+              Enterprise software solutions building the future. We deliver technology that transforms businesses.
             </p>
             <div className="space-y-2">
               <a href="mailto:hello@careerlaunch.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -83,9 +83,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Programs</h3>
+            <h3 className="font-semibold mb-4">Our Work</h3>
             <ul className="space-y-2">
-              {footerLinks.programs.map((link) => (
+              {footerLinks.work.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}

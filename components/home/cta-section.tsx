@@ -28,7 +28,7 @@ export function CTASection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6"
         >
           <Sparkles className="w-4 h-4" />
-          <span className="text-sm font-medium">Limited Spots Available</span>
+          <span className="text-sm font-medium">Let's Build Something Amazing</span>
         </motion.div>
 
         <motion.h2
@@ -37,7 +37,7 @@ export function CTASection() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6"
         >
-          Ready to Accelerate Your <span className="gradient-text">Future?</span>
+          Ready to Transform Your <span className="gradient-text">Product?</span>
         </motion.h2>
 
         <motion.p
@@ -47,7 +47,7 @@ export function CTASection() {
           transition={{ delay: 0.1 }}
           className="text-xl text-muted-foreground mb-10"
         >
-          Join 500+ students who are building real skills, real projects, and real careers. Your transformation starts today.
+          Join 100+ companies building the future with cutting-edge technology. Let's create something extraordinary together.
         </motion.p>
 
         <motion.div
@@ -57,15 +57,15 @@ export function CTASection() {
           transition={{ delay: 0.2 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Link href="/internships">
+          <Link href="/services">
             <Button variant="gradient" size="xl">
-              Start Your Journey
+              Explore Our Services
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>
           <Link href="/contact">
             <Button variant="outline" size="xl">
-              Talk to Our Team
+              Schedule a Demo
             </Button>
           </Link>
         </motion.div>
@@ -77,7 +77,7 @@ export function CTASection() {
           transition={{ delay: 0.3 }}
           className="mt-8 text-sm text-muted-foreground"
         >
-          No credit card required • Free consultation • Join anytime
+          Expert consultation • Custom solutions • Success guaranteed
         </motion.p>
       </div>
     </Section>
