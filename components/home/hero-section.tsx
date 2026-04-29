@@ -22,7 +22,7 @@ export function HeroSection() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50 dark:opacity-40"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 dark:opacity-40 scale-[1.1] md:scale-[1.05]"
         >
           <source src="/video/mp_.mp4" type="video/mp4" />
         </video>
