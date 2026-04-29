@@ -15,8 +15,23 @@ const features = [
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pb-20">
+      {/* Video Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-50 dark:opacity-40"
+        >
+          <source src="/video/mp_.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-background/60 dark:bg-background/80 backdrop-blur-[2px]" />
+      </div>
+
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <motion.div
           className="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
           animate={{
